@@ -1,0 +1,85 @@
+<html>
+<head>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+        div {
+            display: inline-block;
+        }
+        h1 {
+            padding: 20px;
+            text-align: center;
+        }
+        body {
+            font-family: 'Noto Sans', sans-serif !important;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <h1>Ծրագրավորում III Երևան</h1>
+            </tr>
+            <tr>
+                <h1>Լորետա Հակոբյան</h1>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Գույն</th>
+                <th scope="col">Նկարագրություն</th>
+                <th scope="col">Ծնվել է</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td scope="row" style="background-color:green;"></td>
+                <td>Կանաչը խոտն է, բազմանում է մոտակա 8 վանդակներում, 4 տակտը մեկ, մահանում է երբ նրան ուտում է խոտակերը:</td>
+                <td id="grassCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td scope="row" style="background-color:yellow;"></td>
+                <td>Դեղինը խոտակերն է։ Քայլում է խոտերի և դատարկ վանդակների վրայով, էներգիան քչանում է 1֊ով բազմանում է N հատ խոտ ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
+                    երբ նրան ուտում է գիշատիչը կամ երբ խոտ չի ուտում:</td>
+                <td id="grassEaterCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td scope="row" style="background-color:red;"></td>
+                <td>Կարմիրը predatorn-ն է, որը շարժվում է դիագանալով:էներգիան քչանում է 1֊ով։ Ուտում է Խոտակերներին և էներգիան ավելանում է 3֊ով։
+                    Բազմանում է մոտակա տարածքներում, երբ էներգիան 8֊ից ավել։ Ձմռանը դառնում է սպիտակ, իսկ ամռանը նարնջագույն: Սատկում է, երբ էներգիան փոքր կամ հավասար է 0֊ի:</td>
+                <td id="predatorCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td scope="row" style="background-color:black;"></td>
+                <td>Սևը hunter-ն է։ Շարժվում է մոտակա 8 վանդակներում, էներգիան քչանում է 1֊ով։ Ուտում է Predator-ին մոտակա 8 վանդակներում,էներգիան ավելանում է 2-ով։ Բազմանում է մոտակա տարածքներում, երբ էներգիան 8֊ից ավել է։ Սատկում է, երբ էներգիան փոքր կամ հավասար է 0֊ի։ </td>
+                <td id="hunterCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td scope="row" style="background-color:purple;"></td>
+                <td>Մանուշակագույնը werewolf-ն է։Շարժվում է մոտակա 16 վանդակներում, էներգիան քչանում է 1֊ով։
+                    Ուտում է Hunter-ին և Predator-ին, էներգիան ավելանում է 2-ով։ Բազմանում է մոտակա տարածքներում, երբ էներգիան 8֊ից ավել է։ Աշնանը սպիտակում է:
+                    Գարնանը դառնում է վարդագույն:
+                    Սատկում է, երբ էներգիան փոքր կամ հավասար է 0֊ի։
+                </td>
+                <td id="werewolfCount"></td>
+            </tr>
+        </tbody>
+    </table>
+    <h1 id="season"></h1>
+    <script src="p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
